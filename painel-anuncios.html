@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Anúncio</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #f0f2f5; }
+        .form-box { background: white; padding: 20px; border-radius: 12px; max-width: 500px; margin: auto; }
+        input, select, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 15px; background: #0077ff; color: white; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        .loading { display: none; text-align: center; color: #666; }
+    </style>
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Novo Anúncio</h2>
+    <input type="text" id="titulo" placeholder="Título do anúncio">
+    <select id="tipo">
+        <option value="Emprego">Emprego / Vaga</option>
+        <option value="Imóvel">Imóvel</option>
+        <option value="Usado">Produto Usado</option>
+        <option value="Serviço">Serviço / Trabalho</option>
+    </select>
+    <textarea id="descricao" placeholder="Descrição detalhada"></textarea>
+    <input type="text" id="preco" placeholder="Preço (opcional)">
+    <input type="tel" id="whatsapp" placeholder="WhatsApp (com DDD)">
+    <input type="file" id="foto" accept="image/*">
+    
+    <div id="loading" class="loading">Enviando...</div>
+    <button id="btnPublicar">PUBLICAR AGORA</button>
+    <br><br>
+    <a href="anuncios.html">Voltar para anúncios</a>
+</div>
+
+<script type="module" src="painel-anuncios.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Pede Aí | Classificados</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS REPLICADO DO INDEX PARA CONTINUIDADE VISUAL */
+        :root { 
+            --shopee-orange: #ee4d2d; 
+            --used-blue: #0077ff; 
+            --bg-gray: #f8f9fa; 
+            --text-main: #222;
+            --radius-main: 12px;
+        }
+        
+        body { 
+            margin: 0; 
+            background: var(--bg-gray); 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            padding-bottom: 90px; 
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+        
+        /* Header seguindo o padrão do tema Anúncios */
+        header { 
+            background: var(--used-blue); 
+            padding: 16px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 900; }
+        
+        .btn-anunciar {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .container { max-width: 1200px; margin: 16px auto; padding: 0 16px; }
+
+        /* Estilo dos Cards de Anúncios */
+        .card-anuncio {
+            background: white;
+            border-radius: var(--radius-main);
+            overflow: hidden;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+        }
+        .card-anuncio img { width: 100%; height: 200px; object-fit: cover; }
+        .card-body { padding: 16px; }
+        .badge { background: #f0f0f0; padding: 4px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; color: var(--used-blue); }
+        .price { color: var(--used-blue); font-size: 18px; font-weight: 800; margin: 8px 0; display: block; }
+        .btn-whatsapp {
+            background: #25d366;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        /* MENU INFERIOR - IDENTICO AO INDEX.HTML */
+        .bottom-nav { 
+            position: fixed; bottom: 0; left: 0; right: 0; 
+            background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex; justify-content: space-around; padding: 8px 0 calc(env(safe-area-inset-bottom) + 8px); 
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.06); border-top: 1px solid #f0f0f0;
+            z-index: 2000;
+        }
+        .nav-item { 
+            color: #888; border: none; background: none; display: flex; 
+            flex-direction: column; align-items: center; gap: 4px; 
+            font-size: 10px; font-weight: 600; flex: 1; 
+            text-decoration: none; cursor: pointer;
+        }
+        .nav-item i { font-size: 20px; margin-bottom: 2px; }
+        .nav-item.active { color: var(--used-blue); } /* Azul para Anúncios Ativo */
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="logo-container"><i class="fas fa-bullhorn"></i> Pede Aí</span>
+        <a href="painel-anuncios.html" class="btn-anunciar">QUERO ANUNCIAR</a>
+    </header>
+
+    <div class="container" id="listaAnuncios">
+        </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fas fa-shopping-bag"></i><span>Produtos</span>
+        </a>
+        <a href="index.html" class="nav-item" onclick="sessionStorage.setItem('pedeai_mode', 'restaurants')">
+            <i class="fas fa-utensils"></i><span>Gourmet</span>
+        </a>
+        <a href="anuncios.html" class="nav-item active">
+            <i class="fas fa-bullhorn"></i><span>Anúncios</span>
+        </a>
+    </nav>
+
+    <script type="module" src="anuncios.js"></script>
+</body>
+</html>
